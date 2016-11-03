@@ -13,7 +13,7 @@ shinyUI(fluidPage(
         "slider_loa",
         label = "LOA (m):",
         min = 11.58,
-        max = 135,
+        max = 90,
         value = c(11.58, 135)
       ),
 
@@ -39,9 +39,11 @@ shinyUI(fluidPage(
     ),
     
     mainPanel(
-      ggvisOutput("yacht_price")
+      ggvisOutput("yacht_price"),
+      wellPanel(textOutput("yacht_selected"))
+      )
     )
   )
 
 
-))
+)

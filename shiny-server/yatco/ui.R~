@@ -13,7 +13,7 @@ shinyUI(fluidPage(
         "slider_loa",
         label = "LOA (m):",
         min = 11.58,
-        max = 135,
+        max = 90,
         value = c(11.58, 135)
       ),
 
@@ -32,13 +32,18 @@ shinyUI(fluidPage(
         min = 0.25,
         max = 155,
         value = c(0.25, 155)
-      )
+      ),
+
+      textInput("text_builder", "Yacht Builder - Find yachts built by: (e.g., Kingship)"),
+      textInput("text_name", "Yacht Model - Find the model name contains: (e.g. Star)")
     ),
     
     mainPanel(
-      ggvisOutput("yacht_price")
+      ggvisOutput("yacht_price"),
+      wellPanel(textOutput("yacht_selected"))
+      )
     )
   )
 
 
-))
+)
