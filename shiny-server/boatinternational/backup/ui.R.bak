@@ -1,0 +1,59 @@
+library(shiny)
+library(ggvis)
+
+# Define UI for application that draws a histogram
+shinyUI(fluidPage(
+  titlePanel("Boat International"),
+  
+  sidebarLayout(
+    sidebarPanel(
+      helpText("Create scatter plot with daily updated iinformation from the Boat International."),
+      
+      selectInput(
+        "select1",
+        label = "Choose a variable to display",
+        choices = c(
+          "Percent White",
+          "Percent Blank",
+          "Percent Hispanic",
+          "Percent Asian"
+        ),
+        selected = "Percent White"
+      ),
+
+      sliderInput(
+        "slider_loa",
+        label = "LOA (m):",
+        min = 11.58,
+        max = 135,
+        value = c(11.58, 135)
+      ),
+
+      sliderInput(
+        "slider_price",
+        label = "Price (in million USD):",
+        min = 0.25,
+        max = 155,
+        value = c(0.25, 155)
+      ),
+
+      sliderInput(
+        "slider_year",
+        label = "Year of Build:",
+        min = 1900,
+        max = 2019,
+        value = c(1900, 2019),
+        sep = ""
+      )
+    ),
+    
+    mainPanel(
+      textOutput("text1"),
+      textOutput("text_range"),
+      plotOutput("map"),
+      ggvisOutput("yacht_price")
+    )
+  )
+
+
+))
