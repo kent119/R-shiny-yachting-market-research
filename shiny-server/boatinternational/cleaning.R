@@ -74,4 +74,4 @@ yachts <- yachts[currency_is_not_na,]
 #yachts$loa
 #yachts$text_loa
 
-save(yachts, file="/srv/shiny-server/boatinternational/data_boatinternational.Rds")
+save(yachts, file="/srv/shiny-server/boatinternational/data_boatinternational.Rdata")

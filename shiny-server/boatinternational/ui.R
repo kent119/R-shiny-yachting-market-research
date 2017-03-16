@@ -13,16 +13,16 @@ shinyUI(fluidPage(
         "slider_loa",
         label = "LOA (m):",
         min = 11.58,
-        max = 90,
-        value = c(11.58, 135)
+        max = 120,
+        value = c(11.58, 120)
       ),
 
       sliderInput(
         "slider_year",
         label = "Year of Build:",
         min = 1900,
-        max = 2019,
-        value = c(1900, 2019),
+        max = 2020,
+        value = c(1900, 2020),
         sep = ""
       ),
 
@@ -30,8 +30,8 @@ shinyUI(fluidPage(
         "slider_price",
         label = "Price (in million USD):",
         min = 0.25,
-        max = 155,
-        value = c(0.25, 155)
+        max = 255,
+        value = c(0.25, 255)
       ),
 
       textInput("text_builder", "Yacht Builder - Find yachts built by: (e.g., Kingship)"),

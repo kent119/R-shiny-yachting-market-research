@@ -3,35 +3,35 @@ library(ggvis)
 
 # Define UI for application that draws a histogram
 shinyUI(fluidPage(
-  titlePanel("Boat International - Latest Infomation: Yacht Model, LOA, Price, Year of Build"),
+  titlePanel("Yatco - Latest Infomation: Yacht Model, LOA, Price, Year of Build"),
   
   sidebarLayout(
     sidebarPanel(
-      helpText("Create scatter plot with daily updated iinformation from the Boat International."),
+      helpText("Create scatter plot with daily updated iinformation from http://www.yatco.com/."),
      
       sliderInput(
         "slider_loa",
         label = "LOA (m):",
-        min = 11.58,
-        max = 135,
-        value = c(11.58, 135)
+        min = 2.74,
+        max = 110,
+        value = c(2.74, 110)
       ),
 
       sliderInput(
         "slider_year",
         label = "Year of Build:",
-        min = 1900,
-        max = 2019,
-        value = c(1900, 2019),
+        min = 1897,
+        max = 2020,
+        value = c(1897, 2020),
         sep = ""
       ),
 
       sliderInput(
         "slider_price",
         label = "Price (in million USD):",
-        min = 0.25,
-        max = 155,
-        value = c(0.25, 155)
+        min = 0,
+        max = 200,
+        value = c(0, 200)
       ),
 
       textInput("text_builder", "Yacht Builder - Find yachts built by: (e.g., Kingship)"),
@@ -39,9 +39,11 @@ shinyUI(fluidPage(
     ),
     
     mainPanel(
-      ggvisOutput("yacht_price")
+      ggvisOutput("yacht_price"),
+      wellPanel(textOutput("yacht_selected"))
+      )
     )
   )
 
 
-))
+)
