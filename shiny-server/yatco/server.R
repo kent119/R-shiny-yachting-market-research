@@ -61,6 +61,7 @@ shinyServer(function(input, output, session) {
     the_yacht <- the_yacht[the_yacht$year == x$year, ]
     debug2<-the_yacht$price_usd[1]
     the_yacht <- the_yacht[the_yacht$loa == x$loa, ]
+    the_yacht <- the_yacht[!is.na(the_yacht$price),]
     debug3<-nrow(the_yacht)
     debuging<-c(debug1, debug2, debug3)
     paste0("<b>", the_yacht$name, "</b><br>",
@@ -68,7 +69,7 @@ shinyServer(function(input, output, session) {
       #"debug2:", toString(debuging), "<br>",
       the_yacht$text_loa, "<br>",
       the_yacht$text_price, "<br>",
-      the_yacht$builder, " - ", the_yacht$text_year
+      the_yacht$builder, " - ", the_yacht$text_year, "<br>"
     )
   }
   update_selection <- function(x,session){

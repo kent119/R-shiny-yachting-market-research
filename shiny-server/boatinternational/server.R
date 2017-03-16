@@ -8,11 +8,11 @@ load("/srv/shiny-server/boatinternational/data/data.Rda")
 ########  constant  #########
 #############################
 
-BUILDER <- "Builder"
-NAME <- "Name"
+BUILDER <- "X.Builder."
+NAME <- "X.Name."
 PRICE <- "price"
-YEAR <- "Year.of.Build"
-LOA <- "Length.Overall"
+YEAR <- "X.Year.of.Build."
+LOA <- "X.Length.Overall."
 URL <- "url" 
 
 data_colnames <- c(BUILDER, NAME, PRICE, YEAR, LOA, URL)
@@ -128,3 +128,8 @@ shinyServer(function(input, output, session) {
 #  output$yacht_selected <- renderText({yacht_info()})
 #   output$yacht_selected <- renderText({input$selected_yacht_info})
 })
+
+######### test
+#colnames(data)
+#yachts['X.name.']
+#data['X.Name.']

@@ -6,6 +6,7 @@ clean_data <- function(x, x_colnames){
   yachts_colnames <- c("builder", "name", "text_price", "text_year", "text_loa", "url")
   # extract selected columns to make a new data frame 
   new_data <- data.frame(x[x_colnames])
+
   colnames(new_data) <- yachts_colnames
 
   #############################
@@ -58,3 +59,11 @@ clean_data <- function(x, x_colnames){
   #new_data$text_loa
   return <- new_data
 }
+##### test
+#head(new_data['builder'])
+#colnames(new_data)
+#head(colnames(new_data))
+
+#new_data <- data.frame(data[x_colnames])
+#x_colnames=data_colnames
+

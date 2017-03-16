@@ -19,5 +19,5 @@ con_mysql <- function(table, db_user = "root", db_password = "", db_host = "172.
 }
 
 ### test ###
-
+#rawdata <- con_mysql("boatinternational_com")
 ###

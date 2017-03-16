@@ -1,7 +1,7 @@
 library(dplyr)
 library(RMySQL)
 
-con_mysql <- function(table, db_user = "root", db_password = "", db_host = "172.17.0.10", db_name = "resultdb"){
+con_mysql <- function(table, db_user = "root", db_password = "", db_host = "172.17.0.12", db_name = "resultdb"){
   # open a connection
   con <- dbConnect(MySQL(), user=db_user, password=db_password,host=db_host, dbname=db_name)
 
